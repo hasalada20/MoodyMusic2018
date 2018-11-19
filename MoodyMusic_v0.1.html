@@ -5,10 +5,7 @@
 <link href="style.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-    <button type="button" class="Button" onclick="GetNumProg()">Generate progression</button>
-<div>
-    <p id="progression"></p>
-</div>
+    <h1 class="Banner">Moody Music</h1>
 <div>
     <select id="MoodSelector" onchange="setSongMood(this.value)"> 
 	    <option value="" selected disabled hidden>Choose mood</option>
@@ -46,6 +43,29 @@
 	    <option value="" >Minor</option>
     </select> <br />
 </div>
+
+<button type="button" class="Button" onclick="GetNumProg()">Generate progression</button>
+
+    <div class="Progression">
+        <h2 id="progression1"></h2>
+        <h2 id="progression2"></h2>
+        <h2 id="progression3"></h2>
+        <h2 id="progression4"></h2>
+    </div>
+
+    <div class="Progression">
+        <h2 id="progression5"></h2>
+        <h2 id="progression6"></h2>
+        <h2 id="progression7"></h2>
+        <h2 id="progression8"></h2>
+    </div>
+
+    <div class="Progression">
+        <h2 id="progression9"></h2>
+        <h2 id="progression10"></h2>
+        <h2 id="progression11"></h2>
+        <h2 id="progression12"></h2>
+    </div>
 
 <script src="progLibrary.js"></script>
 

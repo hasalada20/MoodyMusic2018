@@ -1,11 +1,15 @@
 <!doctype html>
 <html lang="en">
 <head>
-<script src="progLibrary.js"></script> 
+<title>Moody Music 2018</title>
+<link href="style.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-    <button type="button" onclick="GetNumProg()">Generate progression</button>
+    <button type="button" class="Button" onclick="GetNumProg()">Generate progression</button>
+<div>
     <p id="progression"></p>
+</div>
+<div>
     <select id="MoodSelector" onchange="setSongMood(this.value)"> 
 	    <option value="" selected disabled hidden>Choose mood</option>
 	    <option value='Happy'>Happy</option>
@@ -14,7 +18,8 @@
 	    <option value='Lovely'>Lovely</option>
 	    <option value='Fearful'>Fearful</option>
     </select> <br />
-
+</div>
+<div>
     <select id="KeySelector" onchange="setSongKey(this.value)">
 	    <option value="" selected disabled hidden>Choose key</option>
             <option selected value='songKeyA'>A</option>
@@ -25,7 +30,8 @@
             <option value='songKeyF'>F</option>
             <option value='songKeyG'>G</option>
     </select> <br />
-
+</div>
+<div>
     <select id="StyleSelector" onchange=""> 
 	    <option value="" selected disabled hidden>Choose style</option> 
 	    <option value="AAAA" >AAAA</option>
@@ -33,11 +39,13 @@
 	    <option value="ABBB" >ABBB</option>
 	    <option value="ABCD" >ABCD</option>
     </select> <br />
-
+</div>
+<div>
     <select id="MajorMinorSelector" onchange=""> 
 	    <option value="" >Major</option>
 	    <option value="" >Minor</option>
     </select> <br />
+</div>
 
 <script src="progLibrary.js"></script>
 

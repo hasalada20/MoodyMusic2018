@@ -1,0 +1,35 @@
+body {
+    margin: 16;
+    text-align: center;
+    padding: 16;
+    font-family: 'Arial';
+    background-color: powderblue;
+}
+
+.Button {
+    display: inline-block;
+    border-radius: 4px;
+    background-color: #f4511e;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 20px;
+    padding: 20px;
+    width: 250px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+}
+
+.btn {
+    background: #eb94d0;
+}
+
+
+
+
+
+
+
+
+

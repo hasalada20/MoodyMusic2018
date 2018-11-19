@@ -3,13 +3,13 @@ body {
     text-align: center;
     padding: 16;
     font-family: 'Arial';
-    background-color: powderblue;
+    background-color: lightgray;
 }
 
 .Button {
     display: inline-block;
     border-radius: 4px;
-    background-color: #f4511e;
+    background-color:crimson;
     border: none;
     color: #FFFFFF;
     text-align: center;
@@ -21,12 +21,24 @@ body {
     margin: 5px;
 }
 
+.Banner {
+    color: white;
+    text-align: center;
+    background-color: crimson;
+    margin: 200;
+}
+
 .btn {
     background: #eb94d0;
 }
 
+.Progression {
+    
+}
 
-
+h2 {
+    display: inline;
+}
 
 
 

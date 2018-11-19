@@ -103,5 +103,18 @@ function GetChordProg (currentKey) {
     displayProgression(chordProg);
 }
 function displayProgression (chordProg) {
-    document.getElementById('progression').innerHTML = chordProg;
+    document.getElementById('progression1').innerHTML = chordProg[0];
+    document.getElementById('progression2').innerHTML = chordProg[1];
+    document.getElementById('progression3').innerHTML = chordProg[2];
+    document.getElementById('progression4').innerHTML = chordProg[3];
+
+    document.getElementById('progression5').innerHTML = chordProg[0];
+    document.getElementById('progression6').innerHTML = chordProg[1];
+    document.getElementById('progression7').innerHTML = chordProg[2];
+    document.getElementById('progression8').innerHTML = chordProg[3];
+
+    document.getElementById('progression9').innerHTML = chordProg[0];
+    document.getElementById('progression10').innerHTML = chordProg[1];
+    document.getElementById('progression11').innerHTML = chordProg[2];
+    document.getElementById('progression12').innerHTML = chordProg[3];
 }

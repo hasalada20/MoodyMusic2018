@@ -39,13 +39,13 @@
     </select> <br />
 </div>
 <div>
-    <select id="MajorMinorSelector" onchange=""> 
-	    <option value="" >Major</option>
-	    <option value="" >Minor</option>
+    <select id="MajorMinorSelector" onchange="setMajorMinor(this.value)"> 
+	    <option value="Major" >Major</option>
+        <option value="Minor" >Minor</option>
     </select> <br />
 </div>
 
-<button type="button" class="Button" onclick="GetNumProg()">Generate progression</button>
+<button type="button" class="Button" onclick="GetNumProg()">Generate Progression</button>
 
     <div class="Progression">
         <h2 id="progression1"></h2>

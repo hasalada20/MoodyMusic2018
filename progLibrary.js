@@ -47,16 +47,25 @@ const minorProgs =
 [1,4,5,5],[1,6,3,7],[2,5,1,1]
 ]
 
-var currentKey = 'songKeyA';
+var currentKey = "songKeyA";
 var currentNumProg = [1,1,1,1];
+var majorMinor = "Major";
 GetNumProg();
+
 // setSongKey
 // sets currentKey variable
 function setSongKey (newKey) {
     currentKey = newKey;
     GetChordProg(currentKey);
 }
+// upon change of selector, change majorMinor variable
+function setMajorMinor(tempMajor){
+    majorMinor = tempMajor;
+    GetNumProg();
 
+}
+
+// Uses the mood selector to change the values in MajorMinor and Style
 function setSongMood (newMood) {
     switch(newMood) {
     case 'Happy':
@@ -89,7 +98,14 @@ function setSongMood (newMood) {
 // Takes in a number progression and changes it to a number progression
 // randomly pulled from library
 function GetNumProg() {
-    currentNumProg = majorProgs[Math.floor((Math.random() * NUM_MAJOR_PROG))];
+    switch(majorMinor){
+        case 'Major' :
+            currentNumProg = majorProgs[Math.floor((Math.random() * NUM_MAJOR_PROG))];
+            break;
+        case 'Minor' :
+            currentNumProg = minorProgs[Math.floor((Math.random() * NUM_MINOR_PROG))];
+            break;
+    }
     GetChordProg(currentKey);
 }
 
@@ -97,11 +113,22 @@ function GetNumProg() {
 // Converts a number prog to a chord prog based on current key
 function GetChordProg (currentKey) {
     var chordProg = ['','','',''];
-        for (i=0;i<4;i++) {
-            chordProg[i] = songKeysMajor[currentKey][currentNumProg[i]-1];
+        switch(majorMinor){
+            case 'Major' :
+                for (i=0;i<4;i++) {
+                    chordProg[i] = songKeysMajor[currentKey][currentNumProg[i]-1];
+                }
+                break;
+            case 'Minor':
+                for (i=0;i<4;i++) {
+                    chordProg[i] = songKeysMinor[currentKey][currentNumProg[i]-1];
+                }
+                break;
         }
     displayProgression(chordProg);
 }
+
+// displays the calculated progression
 function displayProgression (chordProg) {
     document.getElementById('progression1').innerHTML = chordProg[0];
     document.getElementById('progression2').innerHTML = chordProg[1];

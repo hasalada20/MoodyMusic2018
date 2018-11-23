@@ -21,14 +21,14 @@ const songKeysMajor = {
 // Object songKeysMinor
 // Contains objects of each minor Key and their chords
 const songKeysMinor = {
-    songKeyAm: ['Am','Bdim','C','Dm','Em','F','G'],
-    songKeyBm: ['Bm','Cdim','D','Em','Fm','G','A'],
-    songKeyCm: ['Cm','Ddim','Eb','Fm','Gm','Ab','Bb'],
-    songKeyCsm: ['C#m','D#dim','E','F#m','G#m','A','B'],
-    songKeyDm: ['Dm','Edim','F','Gm','Am','Bb','C'],
-    songKeyEm: ['Em','F#dim','G','Am','Bm','C','D'],
-    songKeyFm: ['Fm','Gdim','Ab','Bbm','Cm','Db','Eb'],
-    songKeyGm: ['Gm','Adim','Bb','Cm','Dm','Eb','F']
+    songKeyA: ['Am','Bdim','C','Dm','Em','F','G'],
+    songKeyB: ['Bm','Cdim','D','Em','Fm','G','A'],
+    songKeyC: ['Cm','Ddim','Eb','Fm','Gm','Ab','Bb'],
+    songKeyCs: ['C#m','D#dim','E','F#m','G#m','A','B'],
+    songKeyD: ['Dm','Edim','F','Gm','Am','Bb','C'],
+    songKeyE: ['Em','F#dim','G','Am','Bm','C','D'],
+    songKeyF: ['Fm','Gdim','Ab','Bbm','Cm','Db','Eb'],
+    songKeyG: ['Gm','Adim','Bb','Cm','Dm','Eb','F']
 }
 // majorProgs
 // Library of major chord progressions

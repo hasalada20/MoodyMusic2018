@@ -32,13 +32,54 @@ body {
     background: #eb94d0;
 }
 
-.Progression {
-    
-}
-
 h2 {
     display: inline;
 }
+
+#MoodSelector {
+    width:220px;
+    height: 40px;
+}
+
+#KeySelector {
+    width:50px;
+    height: 40px;
+}
+
+#StyleSelector{
+    width: 220px;
+    height: 40px;
+}
+
+#MajorMinorSelector{
+    width:150px;
+    height: 40px;
+}
+
+.boxed {
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    width: 50%;
+    height: auto;
+    border:5px solid crimson;
+    box-sizing: border-box;
+    background-color: white;
+    padding: 20px;
+    margin: 0 auto 0 auto;
+}
+
+select {
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    background-color: crimson;
+    height: 30px;
+    overflow: hidden;
+    width: 240px;
+    font-size: 30px;
+    color: #FFFFFF;
+ }
 
 
 

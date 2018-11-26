@@ -62,7 +62,6 @@ function setSongKey (newKey) {
 function setMajorMinor(tempMajor){
     majorMinor = tempMajor;
     GetNumProg();
-
 }
 
 // Uses the mood selector to change the values in MajorMinor and Style

@@ -48,7 +48,9 @@ const minorProgs =
 ]
 
 var currentKey = "songKeyA";
-var currentNumProg = [1,1,1,1];
+var currentNumProg1 = [1,1,1,1];
+var currentNumProg2 = [1,1,1,1];
+var currentNumProg3 = [1,1,1,1];
 var majorMinor = "Major";
 GetNumProg();
 
@@ -99,48 +101,72 @@ function setSongMood (newMood) {
 function GetNumProg() {
     switch(majorMinor){
         case 'Major' :
-            currentNumProg = majorProgs[Math.floor((Math.random() * NUM_MAJOR_PROG))];
+            currentNumProg1 = majorProgs[Math.floor((Math.random() * NUM_MAJOR_PROG))];
+            currentNumProg2 = majorProgs[Math.floor((Math.random() * NUM_MAJOR_PROG))];
+            currentNumProg3 = majorProgs[Math.floor((Math.random() * NUM_MAJOR_PROG))];
             break;
         case 'Minor' :
-            currentNumProg = minorProgs[Math.floor((Math.random() * NUM_MINOR_PROG))];
+            currentNumProg1 = minorProgs[Math.floor((Math.random() * NUM_MINOR_PROG))];
+            currentNumProg2 = minorProgs[Math.floor((Math.random() * NUM_MINOR_PROG))];
+            currentNumProg3 = minorProgs[Math.floor((Math.random() * NUM_MINOR_PROG))];
             break;
     }
     GetChordProg(currentKey);
 }
 
+
 // GetChordProg
 // Converts a number prog to a chord prog based on current key
 function GetChordProg (currentKey) {
-    var chordProg = ['','','',''];
+    var chordProg1 = ['','','',''];
+    var chordProg2 = ['','','',''];
+    var chordProg3 = ['','','',''];
         switch(majorMinor){
             case 'Major' :
+
                 for (i=0;i<4;i++) {
-                    chordProg[i] = songKeysMajor[currentKey][currentNumProg[i]-1];
+                    chordProg1[i] = songKeysMajor[currentKey][currentNumProg1[i]-1];
+                }
+                for (i=0;i<4;i++) {
+                    chordProg2[i] = songKeysMajor[currentKey][currentNumProg2[i]-1];
+                }
+                for (i=0;i<4;i++) {
+                    chordProg3[i] = songKeysMajor[currentKey][currentNumProg3[i]-1];
                 }
                 break;
+            
             case 'Minor':
                 for (i=0;i<4;i++) {
-                    chordProg[i] = songKeysMinor[currentKey][currentNumProg[i]-1];
+                    chordProg1[i] = songKeysMinor[currentKey][currentNumProg1[i]-1];
+                }
+                for (i=0;i<4;i++) {
+                    chordProg2[i] = songKeysMinor[currentKey][currentNumProg2[i]-1];
+                }
+                for (i=0;i<4;i++) {
+                    chordProg3[i] = songKeysMinor[currentKey][currentNumProg3[i]-1];
                 }
                 break;
         }
-    displayProgression(chordProg);
+        displayProgression(chordProg1, chordProg2, chordProg3);
 }
 
 // displays the calculated progression
-function displayProgression (chordProg) {
-    document.getElementById('progression1').innerHTML = chordProg[0];
-    document.getElementById('progression2').innerHTML = chordProg[1];
-    document.getElementById('progression3').innerHTML = chordProg[2];
-    document.getElementById('progression4').innerHTML = chordProg[3];
+function displayProgression (chordProg1, chordProg2, chordProg3) {
+    
+    document.getElementById('progression1').innerHTML = chordProg1[0];
+    document.getElementById('progression2').innerHTML = chordProg1[1];
+    document.getElementById('progression3').innerHTML = chordProg1[2];
+    document.getElementById('progression4').innerHTML = chordProg1[3];
 
-    document.getElementById('progression5').innerHTML = chordProg[0];
-    document.getElementById('progression6').innerHTML = chordProg[1];
-    document.getElementById('progression7').innerHTML = chordProg[2];
-    document.getElementById('progression8').innerHTML = chordProg[3];
 
-    document.getElementById('progression9').innerHTML = chordProg[0];
-    document.getElementById('progression10').innerHTML = chordProg[1];
-    document.getElementById('progression11').innerHTML = chordProg[2];
-    document.getElementById('progression12').innerHTML = chordProg[3];
+    document.getElementById('progression5').innerHTML = chordProg2[0];
+    document.getElementById('progression6').innerHTML = chordProg2[1];
+    document.getElementById('progression7').innerHTML = chordProg2[2];
+    document.getElementById('progression8').innerHTML = chordProg2[3];
+
+
+    document.getElementById('progression9').innerHTML = chordProg3[0];
+    document.getElementById('progression10').innerHTML = chordProg3[1];
+    document.getElementById('progression11').innerHTML = chordProg3[2];
+    document.getElementById('progression12').innerHTML = chordProg3[3];
 }

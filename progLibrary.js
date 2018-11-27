@@ -126,11 +126,7 @@ function GetChordProg (currentKey) {
 
                 for (i=0;i<4;i++) {
                     chordProg1[i] = songKeysMajor[currentKey][currentNumProg1[i]-1];
-                }
-                for (i=0;i<4;i++) {
                     chordProg2[i] = songKeysMajor[currentKey][currentNumProg2[i]-1];
-                }
-                for (i=0;i<4;i++) {
                     chordProg3[i] = songKeysMajor[currentKey][currentNumProg3[i]-1];
                 }
                 break;
@@ -138,11 +134,7 @@ function GetChordProg (currentKey) {
             case 'Minor':
                 for (i=0;i<4;i++) {
                     chordProg1[i] = songKeysMinor[currentKey][currentNumProg1[i]-1];
-                }
-                for (i=0;i<4;i++) {
                     chordProg2[i] = songKeysMinor[currentKey][currentNumProg2[i]-1];
-                }
-                for (i=0;i<4;i++) {
                     chordProg3[i] = songKeysMinor[currentKey][currentNumProg3[i]-1];
                 }
                 break;

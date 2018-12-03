@@ -140,6 +140,7 @@ function GetChordProg (currentKey) {
                 break;
         }
         displayProgression(chordProg1, chordProg2, chordProg3);
+        updateDiagrams(chordProg1, chordProg2, chordProg3);
 }
 
 // displays the calculated progression
@@ -161,4 +162,12 @@ function displayProgression (chordProg1, chordProg2, chordProg3) {
     document.getElementById('progression10').innerHTML = chordProg3[1];
     document.getElementById('progression11').innerHTML = chordProg3[2];
     document.getElementById('progression12').innerHTML = chordProg3[3];
+}
+
+// updates chord diagrams
+function updateDiagrams (chordProg1, chordProg2, chordProg3) {
+    document.getElementById('chord1').src = "diagrams/" + chordProg1[0] + ".jpg";
+    document.getElementById('chord2').src = "diagrams/" + chordProg1[1] + ".jpg";
+    document.getElementById('chord3').src = "diagrams/" + chordProg1[2] + ".jpg";
+    document.getElementById('chord4').src = "diagrams/" + chordProg1[3] + ".jpg";
 }

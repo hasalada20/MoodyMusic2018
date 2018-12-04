@@ -84,11 +84,11 @@ select {
 
 .Progression {
     display: inline-block;
-  
+    cursor: pointer;
     border-radius: 4px;
     background-color: white;
     text-align: center;
-    width:150px;
+    width: 200px;
     height: 40px;
 }
 

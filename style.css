@@ -79,10 +79,16 @@ select {
     width: 240px;
     font-size: 30px;
     color: #FFFFFF;
- }
+}
 
 
-
-
-
+.Progression {
+    display: inline-block;
+  
+    border-radius: 4px;
+    background-color: white;
+    text-align: center;
+    width:150px;
+    height: 40px;
+}
 

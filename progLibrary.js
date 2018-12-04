@@ -171,3 +171,7 @@ function updateDiagrams (chordProg1, chordProg2, chordProg3) {
     document.getElementById('chord3').src = "diagrams/" + chordProg1[2] + ".jpg";
     document.getElementById('chord4').src = "diagrams/" + chordProg1[3] + ".jpg";
 }
+
+function clickAlertMessage() {
+    window.alert("Alert!");
+}

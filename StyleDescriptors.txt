@@ -1,0 +1,12 @@
+AAAA
+The simplest style of playing. Play the whole chord all at once without any alteration.
+
+ABAB
+Switch between hitting just the root of the chord and the rest of it's notes back and forth.
+
+ABBB
+Hit the root of the chord once, then for the rest of it's play time, play all notes of the chord.
+
+ABCD
+Play the notes of each chord in an arpeggiated (one note at a time) fashion.
+

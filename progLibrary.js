@@ -169,13 +169,15 @@ function displayProgression (chordProg1, chordProg2, chordProg3) {
 // updates chord diagrams
 function updateDiagrams (chordProg1, chordProg2, chordProg3) {
     switch(selector){
-        case(0):            
+        case(0):
+        chordProg1 = convertSharps(chordProg1);   
             document.getElementById('chord1').src = "diagrams/" + chordProg1[0] + ".jpg";
             document.getElementById('chord2').src = "diagrams/" + chordProg1[1] + ".jpg";
             document.getElementById('chord3').src = "diagrams/" + chordProg1[2] + ".jpg";
             document.getElementById('chord4').src = "diagrams/" + chordProg1[3] + ".jpg";
             break;
         case(1):
+        chordProg2 = convertSharps(chordProg2);
             document.getElementById('chord1').src = "diagrams/" + chordProg2[0] + ".jpg";
             document.getElementById('chord2').src = "diagrams/" + chordProg2[1] + ".jpg";
             document.getElementById('chord3').src = "diagrams/" + chordProg2[2] + ".jpg";
@@ -183,6 +185,7 @@ function updateDiagrams (chordProg1, chordProg2, chordProg3) {
             break;
 
         case(2):
+        chordProg3 = convertSharps(chordProg3);
             document.getElementById('chord1').src = "diagrams/" + chordProg3[0] + ".jpg";
             document.getElementById('chord2').src = "diagrams/" + chordProg3[1] + ".jpg";
             document.getElementById('chord3').src = "diagrams/" + chordProg3[2] + ".jpg";
@@ -193,6 +196,16 @@ function updateDiagrams (chordProg1, chordProg2, chordProg3) {
 
 function clickAlertMessage() {
     window.alert("Alert!");
+}
+
+// convertSharps
+// converts sharp characters (#) to an (s) for file readability.
+function convertSharps (prog) {
+    var newProg = ['','','',''];
+    for(i = 0; i < 4; ++i) {
+        newProg[i] = prog[i].replace(/#/, "s");
+    }
+    return newProg;
 }
 
 function clickOnProg(integer) {

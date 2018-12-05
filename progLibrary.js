@@ -1,6 +1,8 @@
-
 const NUM_MAJOR_PROG = 11;
 const NUM_MINOR_PROG = 11;
+
+var pianoA = new Audio();
+pianoA.src = "audio/A.wav";
 
 // songKeysMajor
 const songKeysMajor = {
@@ -213,4 +215,39 @@ function clickOnProg(integer) {
     displayProgression(chordProg1, chordProg2, chordProg3);
 
 }
+
+function playChord() {
+    
+}
+
+function playProgression() {
+    var prog;
+    switch(selector) {
+        case(0): prog = chordProg1;
+        break;
+        case(1): prog = chordProg2;
+        break;
+        case(2): prog = chordProg3;
+        break;
+    }
+
+    var index = 1;
+    //audio = pianoA; // filler
+    var audio = new Audio();
+    audio.src="audio/" + prog[0] + ".wav";
+    audio.play();
+
+    audio.onended = function() {
+        if(index < 4) {
+            //audio = pianoA; // filler
+            audio.src="audio/" + prog[index] + ".wav";
+            audio.play();
+            index++;
+        }
+    }
+}
+
+
 // https://www.w3schools.com/js/tryit.asp?filename=tryjs_intro_lightbulb  was used to understand updating the pictures 
+// playing audio files sequentially: https://pro9ram.wordpress.com/2013/02/21/playing-html-5-audio-sequentially-via-javascript/
+// cont.: https://stackoverflow.com/questions/27363891/javascript-play-audio-one-after-another-html5/27364285#27364285

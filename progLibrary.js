@@ -58,6 +58,7 @@ var chordProg2 = ['','','',''];
 var chordProg3 = ['','','',''];
 var majorMinor = "Major";
 var selector = 0;
+var style
 GetNumProg();
 
 // setSongKey
@@ -103,18 +104,27 @@ function setSongMood (newMood) {
 
 // setStyle 
 // Takes in a style from the user and displays the text description of how to play it 
-funuction setStyle (newStyle) { 
+function setStyle (newStyle) { 
     switch (newStyle) { 
         case 'AAAA': 
-            document.getElementById("AAAA").src = "Style Descriptions/" + newStyle;
+            document.getElementById("description").innerHTML = "StyleDescriptions/" + newStyle;
+            break;
         case 'ABAB':
-            document.getElementById("ABAB").src = "Style Descriptions/" + newStyle;
+            document.getElementById("description").innerHTML = "StyleDescriptions/" + newStyle;
+            break;
         case 'ABBB':
-            document.getElementById("ABBB").src = "StyleDescriptions/" + newStyle;
+            document.getElementById("description").innerHTML = "StyleDescriptions/" + newStyle;
+            break;
         case 'ABCD':
-            docuument.getElementById("ABCD").src = "StyleDescriptions/" + newStyle; 
+            document.getElementById("description").innerHTML = "StyleDescriptions/" + newStyle;
+            break;
+    } 
 }         
-            
+
+function showDescription(style){
+    
+}
+
 // GetNumProg
 // Takes in a number progression and changes it to a number progression
 // randomly pulled from library

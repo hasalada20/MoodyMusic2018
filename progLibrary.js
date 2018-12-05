@@ -274,13 +274,29 @@ function playProgression() {
     var index = 1;
     //audio = pianoA; // filler
     var audio = new Audio();
-    audio.src="audio/" + prog[0] + ".wav";
+    switch(style){
+        case 'AAAA' :
+            audio.src="audio/" + prog[0] + "_AAAA.wav";
+            break;
+
+        case 'ABCD' :
+            audio.src="audio/" + prog[0] + "_ABCD.wav";
+            break;
+
+        case 'ABBB' :
+            audio.src="audio/" + prog[0] + "_ABBB.wav";
+            break;
+
+        case 'ABAB' :
+            audio.src="audio/" + prog[0] + "_ABAB.wav";
+            break;
+    }
     audio.play();
 
     audio.onended = function() {
-        if(index < 4) {
+        while(index < 4) {
             //audio = pianoA; // filler
-            audio.src="audio/" + prog[index] + ".wav";
+            audio.src="audio/" + prog[index] + "_" + style + ".wav";
             audio.play();
             index++;
         }

@@ -5,7 +5,7 @@
 <link href="style.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-    <h1 class="Banner">Moody Music</h1>
+    <h1 class="Banner">Mood Music</h1>
 <div>
     <select name="MoodSelector" id="MoodSelector" onchange="setSongMood(this.value)"> 
 	    <option value="" selected disabled hidden>Choose mood</option>
@@ -37,7 +37,7 @@
     </span>
 
     <div>
-        <select name="StyleSelector" id="StyleSelector"> 
+        <select name="StyleSelector" id="StyleSelector" onchange= "setStyle(this.value)"> 
             <option value="" selected disabled hidden>Choose style</option> 
             <option value="AAAA" >AAAA</option>
             <option value="ABAB" >ABAB</option>

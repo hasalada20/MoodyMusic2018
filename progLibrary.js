@@ -101,6 +101,20 @@ function setSongMood (newMood) {
     GetChordProg(currentKey);
 } 
 
+// setStyle 
+// Takes in a style from the user and displays the text description of how to play it 
+funuction setStyle (newStyle) { 
+    switch (newStyle) { 
+        case 'AAAA': 
+            document.getElementById("AAAA").src = "Style Descriptions/" + newStyle;
+        case 'ABAB':
+            document.getElementById("ABAB").src = "Style Descriptions/" + newStyle;
+        case 'ABBB':
+            document.getElementById("ABBB").src = "StyleDescriptions/" + newStyle;
+        case 'ABCD':
+            docuument.getElementById("ABCD").src = "StyleDescriptions/" + newStyle; 
+}         
+            
 // GetNumProg
 // Takes in a number progression and changes it to a number progression
 // randomly pulled from library

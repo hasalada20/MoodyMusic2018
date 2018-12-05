@@ -107,22 +107,38 @@ function setSongMood (newMood) {
 function setStyle (newStyle) { 
     switch (newStyle) { 
         case 'AAAA': 
-            document.getElementById("description").innerHTML = "StyleDescriptions/" + newStyle;
+            document.getElementById("description").innerHTML = "StyleDescriptions/AAAA";
             break;
         case 'ABAB':
-            document.getElementById("description").innerHTML = "StyleDescriptions/" + newStyle;
+            document.getElementById("description").innerHTML = "StyleDescriptions/ABAB";
             break;
         case 'ABBB':
-            document.getElementById("description").innerHTML = "StyleDescriptions/" + newStyle;
+            document.getElementById("description").innerHTML = "StyleDescriptions/ABBB";
             break;
         case 'ABCD':
-            document.getElementById("description").innerHTML = "StyleDescriptions/" + newStyle;
+            document.getElementById("description").innerHTML = "StyleDescriptions/ABCD";
             break;
     } 
 }         
 
 function showDescription(style){
-    
+    switch (style){
+        case 'AAAA' :
+            window.alert("The simplest style of playing. Play the whole chord all at once without any alteration.");
+            break;
+
+        case 'ABAB' :
+            window.alert("Switch between hitting just the root of the chord and the rest of it's notes back and forth.");
+            break;
+
+        case 'ABBB' :
+            window.alert("Hit the root of the chord once, then for the rest of it's play time, play all notes of the chord.");
+            break;
+
+        case 'ABCD' :
+            window.alert("Play the notes of each chord in an arpeggiated (one note at a time) fashion.");
+            break;
+    }
 }
 
 // GetNumProg

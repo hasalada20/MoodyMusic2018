@@ -214,3 +214,17 @@ function clickOnProg(integer) {
 
 }
 // https://www.w3schools.com/js/tryit.asp?filename=tryjs_intro_lightbulb  was used to understand updating the pictures 
+
+// setStyle 
+// Takes in a style from the user and displays the text description of how to play it 
+funuction setStyle (newStyle) { 
+    switch (newStyle) { 
+        case 'AAAA': 
+            document.getElementById("AAAA").src = "Style Descriptions/" + newStyle;
+        case 'ABAB':
+            document.getElementById("ABAB").src = "Style Descriptions/" + newStyle;
+        case 'ABBB':
+            document.getElementById("ABBB").src = "StyleDescriptions/" + newStyle;
+        case 'ABCD':
+            docuument.getElementById("ABCD").src = "StyleDescriptions/" + newStyle; 
+}    

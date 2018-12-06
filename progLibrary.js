@@ -1,5 +1,5 @@
-const NUM_MAJOR_PROG = 11;
-const NUM_MINOR_PROG = 11;
+const NUM_MAJOR_PROG = 32;
+const NUM_MINOR_PROG = 40;
 
 var pianoA = new Audio();
 pianoA.src = "audio/A.wav";
@@ -36,17 +36,29 @@ const songKeysMinor = {
 // Library of major chord progressions
 const majorProgs =
 [
-  [1,4,5,4],[1,5,1,5],[1,4,1,4],[2,5,1,4],
-  [1,5,6,4],[1,4,5,5],[1,1,4,5],[1,4,5,6],
-  [1,6,4,5],[6,4,1,5],[1,4,6,5]
+    [1,4,5,4],[1,5,1,5],[1,4,1,4],[2,5,1,4],
+    [1,5,6,4],[1,4,5,5],[1,1,4,5],[1,4,5,6],
+    [1,6,4,5],[6,4,1,5],[1,4,6,5],[1,2,3,2],
+    [1,2,4,2],[1,2,5,2],[1,2,3,4],[1,2,5,2],
+    [1,6,1,6],[1,2,6,6],[1,1,2,1],[1,3,2,1],
+    [1,4,4,1],[1,1,5,6],[1,1,4,1],[1,2,5,5],
+    [1,3,2,3],[1,1,3,1],[1,5,3,5],[1,2,5,3],
+    [1,5,1,4],[1,3,5,1],[1,2,5,5],[1,1,2,5]
 ]
 
 // minorProgs
 const minorProgs =
 [
-[1,6,7,1],[1,6,7,6],[1,6,7,7],[1,4,7,1],
-[1,4,7,4],[1,4,7,7],[1,4,5,1],[1,4,5,4],
-[1,4,5,5],[1,6,3,7],[2,5,1,1]
+    [1,6,7,1],[1,6,7,6],[1,6,7,7],[1,4,7,1],
+    [1,4,7,4],[1,4,7,7],[1,4,5,1],[1,4,5,4],
+    [1,4,5,5],[1,6,3,7],[1,5,1,1],[1,7,3,1],
+    [1,7,7,1],[1,1,7,1],[1,7,5,1],[1,5,7,1],
+    [1,3,4,5],[1,5,7,7],[1,1,7,5],[1,1,5,7],
+    [1,1,3,3],[1,3,1,1],[1,1,3,1],[1,1,5,1],
+    [1,1,5,5],[1,1,5,5],[1,5,1,5],[1,3,5,7],
+    [1,5,3,7],[1,7,5,3],[1,7,7,5],[1,7,5,5],
+    [1,6,6,1],[1,6,5,3],[1,5,6,3],[1,5,5,6],
+    [1,3,5,6],[1,6,3,5],[1,1,6,3],[1,1,5,3]
 ]
 
 var currentKey = "songKeyA";
@@ -58,7 +70,14 @@ var chordProg2 = ['','','',''];
 var chordProg3 = ['','','',''];
 var majorMinor = "Major";
 var selector = 0;
-var style
+var style;
+
+// set style to an initial 'AAAA'
+document.getElementById("StyleSelector").selectedIndex = 1;
+style = 'AAAA';
+
+
+// get inital progression
 GetNumProg();
 
 // setSongKey
@@ -79,22 +98,27 @@ function setSongMood (newMood) {
     case 'Happy':
     document.getElementById("MajorMinorSelector").selectedIndex = "0";
     document.getElementById("StyleSelector").selectedIndex = "2";
+    setMajorMinor('Major');
         break;
     case 'Sad':
     document.getElementById("MajorMinorSelector").selectedIndex = "1";
     document.getElementById("StyleSelector").selectedIndex = "4";
+    setMajorMinor('Minor');
         break;
     case 'Angry':
     document.getElementById("MajorMinorSelector").selectedIndex = "1";
     document.getElementById("StyleSelector").selectedIndex = "1";
+    setMajorMinor('Minor');
         break;
     case 'Lovely':
     document.getElementById("MajorMinorSelector").selectedIndex = "0";
     document.getElementById("StyleSelector").selectedIndex = "3";
+    setMajorMinor('Major');
         break;
     case 'Fearful':
     document.getElementById("MajorMinorSelector").selectedIndex = "1";
     document.getElementById("StyleSelector").selectedIndex = "4";
+    setMajorMinor('Minor');
         break;
     default:
         //code block
@@ -102,27 +126,10 @@ function setSongMood (newMood) {
     GetChordProg(currentKey);
 } 
 
-// setStyle 
-// Takes in a style from the user and displays the text description of how to play it 
-function setStyle (newStyle) { 
-    switch (newStyle) { 
-        case 'AAAA': 
-            document.getElementById("description").innerHTML = "StyleDescriptions/AAAA";
-            break;
-        case 'ABAB':
-            document.getElementById("description").innerHTML = "StyleDescriptions/ABAB";
-            break;
-        case 'ABBB':
-            document.getElementById("description").innerHTML = "StyleDescriptions/ABBB";
-            break;
-        case 'ABCD':
-            document.getElementById("description").innerHTML = "StyleDescriptions/ABCD";
-            break;
-    } 
-}         
-
-function showDescription(style){
-    switch (style){
+function setStyle(newStyle){
+    style = newStyle;
+    /* this was intended to be a substitute for playing the chord progression audio, but we're doing that now.
+    switch (newStyle){
         case 'AAAA' :
             window.alert("The simplest style of playing. Play the whole chord all at once without any alteration.");
             break;
@@ -138,8 +145,9 @@ function showDescription(style){
         case 'ABCD' :
             window.alert("Play the notes of each chord in an arpeggiated (one note at a time) fashion.");
             break;
-    }
+    } */
 }
+
 
 // GetNumProg
 // Takes in a number progression and changes it to a number progression
@@ -159,7 +167,6 @@ function GetNumProg() {
     }
     GetChordProg(currentKey);
 }
-
 
 // GetChordProg
 // Converts a number prog to a chord prog based on current key
@@ -185,6 +192,7 @@ function GetChordProg (currentKey) {
         displayProgression(chordProg1, chordProg2, chordProg3);
 }
 
+// displayProgression
 // displays the calculated progression
 function displayProgression (chordProg1, chordProg2, chordProg3) {
     
@@ -193,12 +201,10 @@ function displayProgression (chordProg1, chordProg2, chordProg3) {
     document.getElementById('progression3').innerHTML = chordProg1[2];
     document.getElementById('progression4').innerHTML = chordProg1[3];
 
-
     document.getElementById('progression5').innerHTML = chordProg2[0];
     document.getElementById('progression6').innerHTML = chordProg2[1];
     document.getElementById('progression7').innerHTML = chordProg2[2];
     document.getElementById('progression8').innerHTML = chordProg2[3];
-
 
     document.getElementById('progression9').innerHTML = chordProg3[0];
     document.getElementById('progression10').innerHTML = chordProg3[1];
@@ -208,11 +214,16 @@ function displayProgression (chordProg1, chordProg2, chordProg3) {
     updateDiagrams(chordProg1, chordProg2, chordProg3)
 }
 
-// updates chord diagrams
+// updates chord diagrams and the chord name displayed next to them
 function updateDiagrams (chordProg1, chordProg2, chordProg3) {
     switch(selector){
         case(0):
         chordProg1 = convertSharps(chordProg1);   
+            document.getElementById('chord1name').innerHTML = chordProg1[0];
+            document.getElementById('chord2name').innerHTML = chordProg1[1];
+            document.getElementById('chord3name').innerHTML = chordProg1[2];
+            document.getElementById('chord4name').innerHTML = chordProg1[3];
+
             document.getElementById('chord1').src = "diagrams/" + chordProg1[0] + ".jpg";
             document.getElementById('chord2').src = "diagrams/" + chordProg1[1] + ".jpg";
             document.getElementById('chord3').src = "diagrams/" + chordProg1[2] + ".jpg";
@@ -220,6 +231,11 @@ function updateDiagrams (chordProg1, chordProg2, chordProg3) {
             break;
         case(1):
         chordProg2 = convertSharps(chordProg2);
+            document.getElementById('chord1name').innerHTML = chordProg2[0];
+            document.getElementById('chord2name').innerHTML = chordProg2[1];
+            document.getElementById('chord3name').innerHTML = chordProg2[2];
+            document.getElementById('chord4name').innerHTML = chordProg2[3];
+
             document.getElementById('chord1').src = "diagrams/" + chordProg2[0] + ".jpg";
             document.getElementById('chord2').src = "diagrams/" + chordProg2[1] + ".jpg";
             document.getElementById('chord3').src = "diagrams/" + chordProg2[2] + ".jpg";
@@ -228,6 +244,11 @@ function updateDiagrams (chordProg1, chordProg2, chordProg3) {
 
         case(2):
         chordProg3 = convertSharps(chordProg3);
+            document.getElementById('chord1name').innerHTML = chordProg3[0];
+            document.getElementById('chord2name').innerHTML = chordProg3[1];
+            document.getElementById('chord3name').innerHTML = chordProg3[2];
+            document.getElementById('chord4name').innerHTML = chordProg3[3];
+
             document.getElementById('chord1').src = "diagrams/" + chordProg3[0] + ".jpg";
             document.getElementById('chord2').src = "diagrams/" + chordProg3[1] + ".jpg";
             document.getElementById('chord3').src = "diagrams/" + chordProg3[2] + ".jpg";
@@ -256,8 +277,20 @@ function clickOnProg(integer) {
 
 }
 
-function playChord() {
-    
+function playChord(index) {
+    var prog;
+    switch(selector) {
+        case(0): prog = chordProg1;
+        break;
+        case(1): prog = chordProg2;
+        break;
+        case(2): prog = chordProg3;
+        break;
+    }
+
+    var audio = new Audio();
+    audio.src = "audio/" + style + "/" + prog[index] + ".wav";
+    audio.play();
 }
 
 function playProgression() {
@@ -272,19 +305,20 @@ function playProgression() {
     }
 
     var index = 1;
-    //audio = pianoA; // filler
     var audio = new Audio();
-    audio.src="audio/" + prog[0] + ".wav";
+    audio.src="audio/" + style + "/" + prog[0] + ".wav";
     audio.play();
-
+    document.getElementById('chord' + index).className = "highlight";
     audio.onended = function() {
         if(index < 4) {
-            //audio = pianoA; // filler
-            audio.src="audio/" + prog[index] + ".wav";
+            audio.src="audio/" + style + "/" + prog[index] + ".wav";
+            document.getElementById('chord' + (index+1)).className = "highlight";
+            document.getElementById('chord' + (index)).className = "resize";
             audio.play();
             index++;
         }
     }
+    document.getElementById('chord4').className = "resize";
 }
 
 

@@ -1,4 +1,4 @@
-# MoodyMusic2018
+# Mood Music
 
 ## Mood Music 1.0 -- December 5, 2018
 

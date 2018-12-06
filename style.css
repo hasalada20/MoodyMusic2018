@@ -107,3 +107,19 @@ select {
     height: 40px;
 }
 
+img.resize {
+    max-width:80%;
+    max-height:80%;
+}
+
+img.highlight {
+    max-width:80%;
+    max-height:80%;
+    border: 5px solid cyan;
+    margin: -5px;
+}
+
+.inline-block {
+    display: inline-block;
+ }
+

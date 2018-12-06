@@ -38,7 +38,7 @@
     </span>
 
     <div>
-        <select name="StyleSelector" id="StyleSelector" onchange= "showDescription(this.value)"> 
+        <select name="StyleSelector" id="StyleSelector" onchange= "setStyle(this.value)"> 
             <option value="" selected disabled hidden>Choose style</option> 
             <option value="AAAA" >AAAA</option>
             <option value="ABAB" >ABAB</option>
@@ -48,7 +48,7 @@
     </div>
 </div>
 
-<button type="button" class="Button" onclick="GetNumProg()">Generate progression</button>
+<button type="button" class="Button" onclick="GetNumProg()">Generate progressions</button>
 <br><br>
     <div class="Progression" onclick="clickOnProg(0)">
         <h2 id="progression1"></h2>
@@ -75,10 +75,22 @@
 <button class="Playbutton" onclick="playProgression()"> <img src="playwhite.png">Play</button>
 
 <div class="DisplayedProg">
-    <img id="chord1" src="diagrams/A.jpg" alt="A" onclick="pianoA.play()"><br>
-    <img id="chord2" src="diagrams/A.jpg" alt="A"><br>
-    <img id="chord3" src="diagrams/A.jpg" alt="A"><br>
-    <img id="chord4" src="diagrams/A.jpg" alt="A"><br>
+    <div class="inline-block">
+        <h3 id="chord1name">hi</h3>
+        <img class="resize" id="chord1" src="diagrams/A.jpg" alt="A" onclick="playChord(0)"><br>
+    </div>
+    <div class="inline-block">
+        <h3 id="chord2name">hi</h3>
+        <img class="resize" id="chord2" src="diagrams/A.jpg" alt="A" onclick="playChord(1)"><br>
+    </div>
+    <div class="inline-block">
+        <h3 id="chord3name">hi</h3>
+        <img class="resize" id="chord3" src="diagrams/A.jpg" alt="A" onclick="playChord(2)"><br>
+    </div>
+    <div class="inline-block">
+        <h3 id="chord4name">hi</h3>
+        <img class="resize" id="chord4" src="diagrams/A.jpg" alt="A" onclick="playChord(3)"><br>
+    </div>
 </div>
 
 <script src="progLibrary.js"></script>

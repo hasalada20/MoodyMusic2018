@@ -99,26 +99,31 @@ function setSongMood (newMood) {
     document.getElementById("MajorMinorSelector").selectedIndex = "0";
     document.getElementById("StyleSelector").selectedIndex = "2";
     setMajorMinor('Major');
+    setStyle('ABAB');
         break;
     case 'Sad':
     document.getElementById("MajorMinorSelector").selectedIndex = "1";
     document.getElementById("StyleSelector").selectedIndex = "4";
     setMajorMinor('Minor');
+    setStyle('ABCD');
         break;
     case 'Angry':
     document.getElementById("MajorMinorSelector").selectedIndex = "1";
     document.getElementById("StyleSelector").selectedIndex = "1";
     setMajorMinor('Minor');
+    setStyle('AAAA');
         break;
     case 'Lovely':
     document.getElementById("MajorMinorSelector").selectedIndex = "0";
     document.getElementById("StyleSelector").selectedIndex = "3";
     setMajorMinor('Major');
+    setStyle('ABBB');
         break;
     case 'Fearful':
     document.getElementById("MajorMinorSelector").selectedIndex = "1";
     document.getElementById("StyleSelector").selectedIndex = "4";
     setMajorMinor('Minor');
+    setStyle('ABCD');
         break;
     default:
         //code block

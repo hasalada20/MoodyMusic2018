@@ -288,6 +288,7 @@ function playChord(index) {
         break;
     }
 
+    prog = convertSharps(prog);
     var audio = new Audio();
     audio.src = "audio/" + style + "/" + prog[index] + ".wav";
     audio.play();
@@ -304,6 +305,7 @@ function playProgression() {
         break;
     }
 
+    prog = convertSharps(prog);
     var index = 1;
     var audio = new Audio();
     audio.src="audio/" + style + "/" + prog[0] + ".wav";
